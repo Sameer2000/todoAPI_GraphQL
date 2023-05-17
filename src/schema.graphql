@@ -1,0 +1,21 @@
+type Query {
+    tasks: [Task!]
+    task(id: String!): Task!
+}
+
+type Mutation {
+    create(task: String!, status: Status!): Task!
+    update(id: String!, status: Status!): Task!
+    deleteTask(id: String!): Task!
+}
+
+type Task {
+    id: String!
+    task: String!
+    status: Status!
+}
+
+enum Status {
+    PENDING
+    DONE
+}
